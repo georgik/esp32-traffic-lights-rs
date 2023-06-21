@@ -1,4 +1,9 @@
-# esp32_traffic_lights_rs
+# ESP32-C3 Traffic Lights Rust example
+
+## Wokwi project
+
+You can test the implementation online: https://wokwi.com/projects/368032685146478593
+
 
 ## Dev Containers
 This repository offers Dev Containers supports for:
@@ -75,9 +80,3 @@ For more information and details on how to use the Wokwi extension, see [Getting
 
 [Getting Started]: https://docs.wokwi.com/vscode/getting-started
 [Debugging your code]: https://docs.wokwi.com/vscode/debugging
-
-> **Warning**
->
->  ESP32-C2 is not, yet, not supported in Wokwi.
-
-

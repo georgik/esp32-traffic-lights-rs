@@ -1,33 +1,72 @@
 {
     "version": 1,
+    "author": "Juraj Michalek",
     "editor": "wokwi",
-    "author": "Juraj Michálek <juraj.michalek@espressif.com>",
     "parts": [
-        {
-            "type": "board-esp32-c3-devkitm-1",
-            "id": "esp",
-            "top": 0.59,
-            "left": 0.67,
-            "attrs": {
-                "flashSize": "16"
-            }
-        }
+      {
+        "type": "board-esp32-c3-devkitm-1",
+        "id": "esp",
+        "top": 0,
+        "left": 0.67,
+        "attrs": { "builder": "rust-nostd-esp" }
+      },
+      {
+        "type": "wokwi-resistor",
+        "id": "r1",
+        "top": 63.25,
+        "left": 131.26,
+        "attrs": { "value": "130" }
+      },
+      {
+        "type": "wokwi-led",
+        "id": "led1",
+        "top": 24.74,
+        "left": 229.66,
+        "attrs": { "color": "red", "flip": "1" }
+      },
+      {
+        "type": "wokwi-led",
+        "id": "led2",
+        "top": 70.72,
+        "left": 211.66,
+        "attrs": { "color": "orange", "flip": "1" }
+      },
+      {
+        "type": "wokwi-led",
+        "id": "led3",
+        "top": 110.24,
+        "left": 197.66,
+        "attrs": { "color": "green", "flip": "1" }
+      },
+      {
+        "type": "wokwi-resistor",
+        "id": "r2",
+        "top": 89.51,
+        "left": 132.86,
+        "attrs": { "value": "120" }
+      },
+      {
+        "type": "wokwi-resistor",
+        "id": "r3",
+        "top": 128.84,
+        "left": 134.19,
+        "attrs": { "value": "110" }
+      }
     ],
     "connections": [
-        [
-            "esp:TX",
-            "$serialMonitor:RX",
-            "",
-            []
-        ],
-        [
-            "esp:RX",
-            "$serialMonitor:TX",
-            "",
-            []
-        ]
+      [ "esp:TX", "$serialMonitor:RX", "", [] ],
+      [ "esp:RX", "$serialMonitor:TX", "", [] ],
+      [ "led1:A", "r1:2", "red", [ "v0" ] ],
+      [ "led2:A", "r2:2", "orange", [ "v0" ] ],
+      [ "led3:A", "r3:2", "green", [ "h-8.99", "v-116.91" ] ],
+      [ "esp:7", "r1:1", "red", [ "h0" ] ],
+      [ "esp:6", "r2:1", "orange", [ "h0" ] ],
+      [ "esp:5", "r3:1", "green", [ "h0" ] ],
+      [ "esp:GND.6", "led1:C", "black", [ "v0.8", "h119.4" ] ],
+      [ "esp:GND.6", "led2:C", "black", [ "v0.8", "h157.4" ] ],
+      [ "esp:GND.6", "led3:C", "black", [ "v0.8", "h192.4" ] ]
     ],
-    "serialMonitor": {
-        "display": "terminal"
-    }
-}
+    "serialMonitor": { "display": "terminal" },
+    "dependencies": {}
+  }
+  
