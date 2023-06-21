@@ -19,7 +19,7 @@ jobs:
           toolchain: nightly
 
       - name: Build
-        run: cargo build
+        run: cargo build --target riscv32imc-unknown-none-elf
 
       - name: Upload Binary Artifact
         uses: actions/upload-artifact@v2
