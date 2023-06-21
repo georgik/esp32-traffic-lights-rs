@@ -1,4 +1,4 @@
-name: Traffic Light Testing
+name: Traffic Light CI
 
 on:
   push:
@@ -6,12 +6,24 @@ on:
       - main
 
 jobs:
-  test-on-wokwi:
+  build:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+
+      - name: Set up Rust
+        uses: actions/setup-rust@v1
+
+      - name: Build
+        run: cargo build
+
+      - name: Upload Binary Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: esp32_traffic_lights_rs
+          path: target/riscv32imc-unknown-none-elf/debug/esp32_traffic_lights_rs
 
       - name: Test Traffic Light Scenario on Wokwi
         uses: wokwi/wokwi-ci-action@v1
