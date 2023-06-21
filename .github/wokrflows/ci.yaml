@@ -1,0 +1,21 @@
+name: Traffic Light Testing
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test-on-wokwi:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Test Traffic Light Scenario on Wokwi
+        uses: wokwi/wokwi-ci-action@v1
+        with:
+          token: ${{ secrets.WOKWI_CLI_TOKEN }}
+          path: /
+          scenario: 'traffic_light.test.yaml'

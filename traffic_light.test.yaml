@@ -1,0 +1,9 @@
+name: Traffic Light Test
+version: 1
+author: Juraj Michalek
+
+steps:
+  - wait-serial: 'Color: Red'
+  - wait-serial: 'Color: Orange'
+  - wait-serial: 'Color: Green'
+  - wait-serial: 'Color: Orange'
