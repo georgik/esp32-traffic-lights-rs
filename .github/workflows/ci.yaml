@@ -18,6 +18,7 @@ jobs:
         with:
           toolchain: nightly
           target: riscv32imc-unknown-none-elf
+          components: rust-src
 
       - name: Build
         run: cargo +nightly build --target riscv32imc-unknown-none-elf
