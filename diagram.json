@@ -51,6 +51,13 @@
         "top": 128.84,
         "left": 134.19,
         "attrs": { "value": "110" }
+      },
+      {
+        "type": "chip-inverter",
+        "id": "chip1",
+        "top": -355.68,
+        "left": -42.25,
+        "attrs": {}
       }
     ],
     "connections": [
@@ -69,4 +76,3 @@
     "serialMonitor": { "display": "terminal" },
     "dependencies": {}
   }
-  

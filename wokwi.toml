@@ -3,3 +3,7 @@ version = 1
 gdbServerPort = 3333
 elf = "target/riscv32imc-unknown-none-elf/debug/esp32_traffic_lights_rs"
 firmware = "target/riscv32imc-unknown-none-elf/debug/esp32_traffic_lights_rs"
+
+[[chip]]
+name = 'chip-inverter'  # To use the chip in diagram.json, add a part with "chip-inverter" type.
+binary = 'chips/rust_chip_inverter/target/wasm32-unknown-unknown/release/chip_inverter.wasm'
