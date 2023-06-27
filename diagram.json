@@ -66,7 +66,7 @@
       [ "esp:GND.6", "led2:C", "black", [ "v0.8", "h157.4" ] ],
       [ "esp:GND.6", "led3:C", "black", [ "v0.8", "h192.4" ] ]
     ],
-    "serialMonitor": { "display": "terminal" },
+    "serialMonitor": { "display": "terminal", "convertEol": true },
     "dependencies": {}
   }
   
